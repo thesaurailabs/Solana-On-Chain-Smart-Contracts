@@ -5,3 +5,21 @@ target
 node_modules
 test-ledger
 .yarn
+.anchor
+.DS_Store
+target
+**/*.rs.bk
+node_modules
+test-ledger
+.yarn
+
+# Security - Keypairs
+**/*-keypair.json
+*id.json
+secret.json
+wallet.json
+
+# Environment
+.env
+.env.*
+*.log

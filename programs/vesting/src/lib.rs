@@ -11,12 +11,12 @@ security_txt! {
     project_url: "https://saurs.ai",
     contacts: "email:reachout@saurs.ai",
     preferred_languages: "en",
-    source_code: "https://github.com/Arpit098/Vesting-Verify",
+    source_code: "https://github.com/thesaurailabs/Solana-On-Chain-Smart-Contracts",
     policy: "https://saurs.ai/buynow",
     acknowledgements: "The SaurAI Labs"
 }
 
-declare_id!("CPZu31rBT7cWhWbwath7ZgxFGCsJbYyDX3tD9jKs1c4h");
+declare_id!("SAURGZTwnVRzp85TcuKiENjZxF4x7VnSvPGCzW8MsWv");
 const ADMIN: Pubkey = pubkey!("3c1gFBMmZFrDTgUz2HH8yhhbfqibdwfK14QtHRiQLYE1");
 
 #[program]

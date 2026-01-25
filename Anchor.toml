@@ -6,8 +6,8 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-swap = "SAURbWr37gXUYK9a15ppcppys1ktnmyVDFkCCyC2ePn"
-vesting = "SAURWKPfnsLs3MmDkR3uGTyZuCdn4re5bzZQrZkrTe5"
+swap = "SAURapcU2gKQvUDByeq3NKGwuaSCvYdwMGJ3nrSTgHm"
+vesting = "SAURGZTwnVRzp85TcuKiENjZxF4x7VnSvPGCzW8MsWv"
 
 [registry]
 url = "https://api.apr.dev"

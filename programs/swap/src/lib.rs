@@ -12,13 +12,13 @@ security_txt! {
     project_url: "https://saurs.ai",
     contacts: "email:reachout@saurs.ai",
     preferred_languages: "en",
-    source_code: "https://github.com/xys/Vesting-Verify",
+    source_code: "https://github.com/thesaurailabs/Solana-On-Chain-Smart-Contracts",
     policy: "https://saurs.ai/buynow",
     acknowledgements: "The SaurAI Labs"
 }
 
 
-declare_id!("SAURbWr37gXUYK9a15ppcppys1ktnmyVDFkCCyC2ePn");
+declare_id!("SAURapcU2gKQvUDByeq3NKGwuaSCvYdwMGJ3nrSTgHm");
 
 
 pub const FEED_ID: &str = "ef0d8b6fda2ceba41da15d4095d1da392a0d2f8ed0c6c7bc0f4cfac8c280b56d"; // SOL/USD price feed id from https://pyth.network/developers/price-feed-ids

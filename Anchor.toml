@@ -9,6 +9,10 @@ skip-lint = false
 swap = "SAURapcU2gKQvUDByeq3NKGwuaSCvYdwMGJ3nrSTgHm"
 vesting = "SAURGZTwnVRzp85TcuKiENjZxF4x7VnSvPGCzW8MsWv"
 
+[programs.mainnet]
+swap = "SAUR5HUSEyf4LPRg3biDZ3Zxq2dbJvArnh7dwTmvfvj"
+vesting = "SAURGZTwnVRzp85TcuKiENjZxF4x7VnSvPGCzW8MsWv"
+
 [registry]
 url = "https://api.apr.dev"
 

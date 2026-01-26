@@ -8,17 +8,18 @@ use pyth_solana_receiver_sdk::price_update::{get_feed_id_from_hex, PriceUpdateV2
 use solana_security_txt::security_txt;
 
 security_txt! {
-    name: "Presale Buy Now Contract",
+    name: "SAURAI Presale Program",
     project_url: "https://saurs.ai",
     contacts: "email:reachout@saurs.ai",
     preferred_languages: "en",
     source_code: "https://github.com/thesaurailabs/Solana-On-Chain-Smart-Contracts",
     policy: "https://saurs.ai/buynow",
-    acknowledgements: "The SaurAI Labs"
-}
+    acknowledgements: "The SaurAI Labs",
+    icon: "https://ipfs.io/ipfs/Qmbwdfd9BAbyPLJn3TixaTkKbSNZFLEa5cDam4Eev4eJHP"
+} 
 
 
-declare_id!("SAURapcU2gKQvUDByeq3NKGwuaSCvYdwMGJ3nrSTgHm");
+declare_id!("SAUR5HUSEyf4LPRg3biDZ3Zxq2dbJvArnh7dwTmvfvj");
 
 
 pub const FEED_ID: &str = "ef0d8b6fda2ceba41da15d4095d1da392a0d2f8ed0c6c7bc0f4cfac8c280b56d"; // SOL/USD price feed id from https://pyth.network/developers/price-feed-ids

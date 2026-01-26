@@ -21,3 +21,6 @@ anchor-lang = { version = "0.32.1", features = ["init-if-needed"] }
 anchor-spl = "0.32.1"
 solana-security-txt = "1.1.1"
 chrono = "0.4"
+blake3 = { workspace = true }
+base64ct = { workspace = true }
+time = { workspace = true }

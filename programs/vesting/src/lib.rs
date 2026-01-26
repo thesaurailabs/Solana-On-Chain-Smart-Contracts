@@ -7,13 +7,14 @@ use chrono::prelude::*;
 use solana_security_txt::security_txt;
 
 security_txt! {
-    name: "Vesting Smart Contract",
+    name: "SAURAI Vesting Program",
     project_url: "https://saurs.ai",
     contacts: "email:reachout@saurs.ai",
     preferred_languages: "en",
     source_code: "https://github.com/thesaurailabs/Solana-On-Chain-Smart-Contracts",
     policy: "https://saurs.ai/buynow",
-    acknowledgements: "The SaurAI Labs"
+    acknowledgements: "The SaurAI Labs",
+    icon: "https://ipfs.io/ipfs/Qmbwdfd9BAbyPLJn3TixaTkKbSNZFLEa5cDam4Eev4eJHP"
 }
 
 declare_id!("SAURGZTwnVRzp85TcuKiENjZxF4x7VnSvPGCzW8MsWv");

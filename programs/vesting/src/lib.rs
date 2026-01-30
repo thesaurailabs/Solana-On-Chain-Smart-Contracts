@@ -166,6 +166,36 @@ pub mod vesting {
 
         Ok(())
     }
+     pub fn close_vesting_account(ctx: Context<CloseVestingAccount>) -> Result<()> {
+    let vesting_account = &ctx.accounts.vesting_account;
+    let treasury_balance = ctx.accounts.treasury_token_account.amount;
+   
+    // SIMPLE CHECK: If treasury has tokens, reserves must exist
+    require!(
+        treasury_balance == 0,
+        ErrorCode::FundsRemaining
+    );
+   
+    // Close Treasury Account (already empty, just reclaim rent)
+    let seeds = &[
+        vesting_account.reserve_type.as_bytes(),
+        &[vesting_account.bump],
+    ];
+    let signer_seeds = &[&seeds[..]];
+   
+    let cpi_accounts = anchor_spl::token_interface::CloseAccount {
+        account: ctx.accounts.treasury_token_account.to_account_info(),
+        destination: ctx.accounts.owner.to_account_info(),
+        authority: ctx.accounts.vesting_account.to_account_info(),
+    };
+    let cpi_program = ctx.accounts.token_program.to_account_info();
+    let cpi_ctx = CpiContext::new_with_signer(cpi_program, cpi_accounts, signer_seeds);
+    anchor_spl::token_interface::close_account(cpi_ctx)?;
+
+
+    Ok(())
+}
+
 }
 
 #[derive(Accounts)]
@@ -272,6 +302,26 @@ pub struct CloseReserveAccount<'info> {
     pub beneficiary: Signer<'info>,
     pub system_program: Program<'info, System>,
 }
+#[derive(Accounts)]
+pub struct CloseVestingAccount<'info> {
+    #[account(mut)]
+    pub owner: Signer<'info>,
+    #[account(
+        mut,
+        close = owner,
+        has_one = owner,
+        has_one = treasury_token_account,
+        has_one = mint,
+    )]
+    pub vesting_account: Account<'info, VestingAccount>,
+    #[account(mut)]
+    pub treasury_token_account: InterfaceAccount<'info, TokenAccount>,
+    #[account(mut)]
+    pub owner_token_account: InterfaceAccount<'info, TokenAccount>,
+    pub mint: InterfaceAccount<'info, Mint>,
+    pub token_program: Interface<'info, TokenInterface>,
+}
+
 #[account]
 #[derive(InitSpace, Debug)]
 pub struct VestingAccount {
